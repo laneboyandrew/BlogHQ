@@ -22,7 +22,7 @@ end
 
 get '/posts' do
 
-  erb :post
+  erb :posts
 end
 
 post '/posts' do
