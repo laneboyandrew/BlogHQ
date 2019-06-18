@@ -1,9 +1,11 @@
-<h2> Here you can leave your comment: </h2>
-<br />
-<label>Ваше имя: </label>
-<input name="personname" type="text" class="form-control" placeholder="Введите Ваше имя" value="" >
-<br />
-<label>Ваш комментарий: </label>
-<textarea name ="content" class="form-control" rows="3" placeholder="Введите Ваш комментарий" value=""></textarea>
-<br />
-<button type="button" class="btn btn-success">Прокомментировать</button>
+<h2>Last updates: </h2>
+
+<% @posts.each do |p|%>
+  <label> Имя: </label>
+    <p> <%= p.personname %> </p>
+  <label> Запись: </label>
+    <p> <%= p.content %> </p>
+
+
+
+<% end %>
