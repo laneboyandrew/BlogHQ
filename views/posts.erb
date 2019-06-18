@@ -1,11 +1,17 @@
 <h2>Last updates: </h2>
 
 <% @posts.each do |p|%>
-  <label> Имя: </label>
-    <p> <%= p.personname %> </p>
-  <label> Запись: </label>
-    <p> <%= p.content %> </p>
+  <label> Имя: <%= p.personname %> </label>
+  <br />
+  <label> Запись: <%= p.content %> </label>
+    <p>  </p>
+  <p> Added at: <%= p['created_date'] %></p>
 
+  <a href="/details/<%= p['id']%>">Comments</a>
+
+
+  <br />
+  <br />
 
 
 <% end %>

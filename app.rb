@@ -43,6 +43,7 @@ post '/createpost' do
 end
 
 get '/posts' do
+
   erb :posts
 end
 
