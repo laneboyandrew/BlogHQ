@@ -4,12 +4,12 @@
 
   <div class="form-group">
     <label for="inputname">Enter your name: </label>
-    <input name="createpost[personname]" type="text" class="form-control" id="exampleInputName2" placeholder="Andrey Grach">
+    <input name="createpost[personname]" type="text" class="form-control" id="exampleInputName2" placeholder="Andrey Grach"
+           value="<%= @p.personname %>">
   </div>
 
   <label for="inputcomment">Type your story: </label>
-  <textarea name="createpost[content]" class="form-control" rows="3" placeholder="Type post text here"></textarea>
+  <textarea name="createpost[content]" class="form-control" placeholder="Type post text here" rows="3"><%= @p.content %></textarea>
   </br>
   <button type="submit" class="btn btn-success">Submit</button>
-
 </form>

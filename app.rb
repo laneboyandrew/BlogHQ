@@ -32,14 +32,22 @@ get '/' do
 end
 
 get '/createpost' do
+  @p = Post.new params[:createpost]
+
   erb :createpost
 end
 
 post '/createpost' do
 
-  p = Post.new params[:createpost]
-  p.save
+  @p = Post.new params[:createpost]
+  @p.save
+
+  if @p.save
   erb "<h2>Thank you!</h2>"
+  else
+    @error = @p.errors.full_messages.first
+    erb :createpost
+    end
 end
 
 get '/posts' do
@@ -50,3 +58,8 @@ end
 post '/posts' do
   erb "Zaglushka"
 end
+
+get '/details/:post_id' do
+  post_id = params[:post_id]
+
+  end
