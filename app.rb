@@ -2,7 +2,6 @@ require 'rubygems'
 require 'sinatra'
 require 'sinatra/reloader'
 require 'sinatra/activerecord'
-#chekaypofany 
 
 set :database, "sqlite3:mybloghq.db"
 
