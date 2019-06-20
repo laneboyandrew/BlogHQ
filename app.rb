@@ -6,8 +6,14 @@ require 'sinatra/activerecord'
 
 set :database, "sqlite3:mybloghq.db"
 
-class Post < ActiveRecord::Base
+before do
+  @posts = Post.all
+  @comments = Comment.all
+  @feedbacks = Feedback.all
+end
 
+class Post < ActiveRecord::Base
+has_many :comments 
   validates :personname, presence: true, length: {minimum: 3}
   validates :content, presence: true
 
@@ -20,11 +26,12 @@ class Comment < ActiveRecord::Base
 
 end
 
-before do
-  @posts = Post.all
-  @comments = Comment.all
-end
+class Feedback < ActiveRecord::Base
 
+  validates :username, presence: true, length: {minimum: 3}
+  validates :textarea, presence: true 
+
+end
 
 get '/' do
 
@@ -68,5 +75,19 @@ end
 
 get '/feedback' do
 
+  @f = Feedback.new
+
+
   erb :feedback
 end
+
+post '/feedback' do
+  @f = Feedback.new params[:feedback]
+ if @f.save
+   erb "Thanks for your feedback!"
+ else
+   @error = @f.errors.full_messages.first
+   erb :feedback
+
+ end
+ end

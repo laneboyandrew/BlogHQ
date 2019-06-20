@@ -9,9 +9,9 @@
 
 <form action="/feedback" method="POST" class="container">
   <p><b>Ваше имя:</b></p>
-  <input name = "username" placeholder="Введите Ваше имя" type="text" class="form-control" value="<%= @username %>">
+  <input name = "feedback[username]" placeholder="Введите Ваше имя" type="text" class="form-control" value="<%= @username %>">
   <p><b>Ваш отзыв:</b></p>
-  <p> <textarea placeholder="Вам понравилось? :)" rows="5" cols="45" class="container" name="textarea" value="<%= @textarea %>"></textarea></p>
+  <p> <textarea placeholder="Вам понравилось? :)" rows="5" cols="45" class="container" name="feedback[textarea]" value="<%= @textarea %>"></textarea></p>
   <p><input type="submit" class="btn btn-outline-success" value="Отправить"></p>
 </form>
 
