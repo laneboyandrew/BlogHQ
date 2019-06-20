@@ -64,4 +64,9 @@ end
 get '/details/:post_id' do
   post_id = params[:post_id]
 
-  end
+end
+
+get '/feedback' do
+
+  erb :feedback
+end
