@@ -67,10 +67,11 @@ post '/posts' do
   erb "Zaglushka"
 end
 
-get '/details/:post_id' do
-  post_id = params[:post_id]
+get '/details/:id' do
+  erb :postpage
 
 end
+
 
 get '/feedback' do
 
