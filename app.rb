@@ -68,6 +68,7 @@ post '/posts' do
 end
 
 get '/details/:id' do
+  @postinfo = Post.find(params[:id])
   erb :postpage
 
 end
